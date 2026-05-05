@@ -7,7 +7,7 @@ services:
       - "80"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.marketixtech-web.rule=Host(`marketixtech.com`, `www.marketixtech.com`)"
+      - "traefik.http.routers.marketixtech-web.rule=Host(`marketixtech.com`) || Host(`www.marketixtech.com`)"
       - "traefik.http.routers.marketixtech-web.entrypoints=websecure"
       - "traefik.http.routers.marketixtech-web.tls.certresolver=myresolver"
       - "traefik.http.services.marketixtech-web.loadbalancer.server.port=80"
