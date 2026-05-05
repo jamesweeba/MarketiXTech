@@ -1,0 +1,20 @@
+services:
+
+  web:
+    image: reg-aml.esoko.com/deveops-test.img/marketixtech-web:alpha
+    restart: unless-stopped
+    expose:
+      - "80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.marketixtech-web.rule=Host(`marketixtech.com`, `www.marketixtech.com`)"
+      - "traefik.http.routers.marketixtech-web.entrypoints=websecure"
+      - "traefik.http.routers.marketixtech-web.tls.certresolver=myresolver"
+      - "traefik.http.services.marketixtech-web.loadbalancer.server.port=80"
+      - "com.centurylinklabs.watchtower.enable=true"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
