@@ -311,30 +311,40 @@ nav.scrolled {
   
 /* Integrations Bar */
 .integrations-bar {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.01);
   padding: 40px 0;
   overflow: hidden;
   border-top: 1px solid var(--glass-border);
   border-bottom: 1px solid var(--glass-border);
+  position: relative;
+  /* Premium Edge Fade */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .integrations-track {
   display: flex;
-  gap: 80px;
   width: max-content;
-  animation: scroll 30s linear infinite;
+  animation: scroll 40s linear infinite;
 }
 
-.integrations-track span {
+.integration-group {
+  display: flex;
+  gap: 100px;
+  padding-right: 100px; /* Essential for seamless gap */
+}
+
+.integration-group span {
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-muted);
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+  white-space: nowrap;
 }
 
-.integrations-track i {
+.integration-group i {
   font-size: 2rem;
   color: var(--primary);
 }
@@ -485,11 +495,55 @@ nav.scrolled {
 input:checked + .slider { background-color: var(--primary); }
 input:checked + .slider:before { transform: translateX(26px); }
 
+/* Ecosystem Section */
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.app-card {
+  text-align: center;
+  padding: 40px 30px;
+  transition: var(--transition-smooth);
+}
+
+.app-card i {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.app-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.app-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.app-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary);
+}
+
+.app-card:hover i {
+  transform: scale(1.1) translateY(-5px);
+}
+
 @media (max-width: 768px) {
   .pricing-card.featured {
     transform: scale(1);
   }
   .cursor-dot, .cursor-outline {
     display: none;
+  }
+  .app-card {
+    padding: 30px 20px;
   }
 }

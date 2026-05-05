@@ -80,7 +80,7 @@ if (document.getElementById('typed')) {
 }
 
 // Initialize 3D Tilt Effect
-VanillaTilt.init(document.querySelectorAll(".glass-card, .step-card"), {
+VanillaTilt.init(document.querySelectorAll(".glass-card, .step-card, .app-card"), {
     max: 10,
     speed: 400,
     glare: true,
@@ -131,4 +131,35 @@ document.querySelectorAll('a, button, .glass-card, .faq-item').forEach(el => {
         cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
         cursorOutline.style.borderColor = 'var(--primary)';
     });
+});
+// Dynamic Integrations Bar Logic
+const integrations = [
+    { name: 'Shopify', icon: 'fab fa-shopify' },
+    { name: 'HubSpot', icon: 'fab fa-hubspot' },
+    { name: 'Salesforce', icon: 'fab fa-salesforce' },
+    { name: 'Google Sheets', icon: 'fab fa-google' },
+    { name: 'WordPress', icon: 'fab fa-wordpress' },
+    { name: 'WhatsApp API', icon: 'fab fa-whatsapp' }
+];
+
+const renderIntegrations = () => {
+    const track = document.getElementById('integrations-track');
+    if (!track) return;
+
+    // Create the content once
+    const groupContent = integrations.map(item => `
+        <span><i class="${item.icon}"></i> ${item.name}</span>
+    `).join('');
+
+    // Inject twice for seamless loop
+    track.innerHTML = `
+        <div class="integration-group">${groupContent}</div>
+        <div class="integration-group">${groupContent}</div>
+    `;
+};
+
+// Initialize everything
+window.addEventListener('load', () => {
+    renderIntegrations();
+    revealOnScroll();
 });
