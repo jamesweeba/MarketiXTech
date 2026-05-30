@@ -169,10 +169,52 @@ nav.scrolled {
   max-width: 700px;
 }
 
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(37, 211, 102, 0.08);
+  border: 1px solid rgba(37, 211, 102, 0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.1);
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--primary);
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.2); opacity: 1; }
+}
+
 .hero h1 {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  line-height: 1.05;
+  margin-bottom: 15px;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+}
+
+.hero-tagline {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 500;
+  color: var(--text-main);
   margin-bottom: 24px;
+  min-height: 80px;
+  line-height: 1.2;
 }
 
 .hero p {
@@ -308,6 +350,7 @@ nav.scrolled {
   .whatsapp-float span {
     display: none;
   }
+}
   
 /* Integrations Bar */
 .integrations-bar {

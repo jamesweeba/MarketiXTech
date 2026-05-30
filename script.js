@@ -66,9 +66,9 @@ window.addEventListener('scroll', () => {
 if (document.getElementById('typed')) {
     new Typed('#typed', {
         strings: [
-            'Smart AI Chatbots Delivered via WhatsApp',
-            'Smart Workflow Automation Delivered via WhatsApp',
-            'Smart Custom Software Delivered via WhatsApp'
+            'Smart AI Chatbots by MarketiX Tech',
+            'Smart Workflow Automation by MarketiX Tech',
+            'Smart Custom Software by MarketiX Tech'
         ],
         typeSpeed: 50,
         backSpeed: 30,
