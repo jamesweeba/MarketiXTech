@@ -7,6 +7,7 @@ COPY sitemap.xml  /usr/share/nginx/html/sitemap.xml
 COPY style.css    /usr/share/nginx/html/style.css
 COPY script.js    /usr/share/nginx/html/script.js
 COPY hero-bg.png  /usr/share/nginx/html/hero-bg.png
+COPY images/      /usr/share/nginx/html/images/
 COPY nginx.conf   /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
