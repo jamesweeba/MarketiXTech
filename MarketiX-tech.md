@@ -43,8 +43,8 @@ To simplify business communication by leveraging WhatsApp as a powerful platform
 
 ## 📞 Contact Us
 
-- 📧 Email: projects@nimdipremier.com  
-- 📱 Phone/WhatsApp: +233 24 565 5799  
+- 📧 Email: quacinyadi@yahoo.com  
+- 📱 Phone/WhatsApp: +233 59 840 2862  
 
 ---
 
